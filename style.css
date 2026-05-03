@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Georgia', serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: black;
+  overflow: hidden;
+}
+
+/* brilho fofo */
+body::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 10%, transparent 60%);
+  animation: brilho 8s infinite linear;
+}
+
+@keyframes brilho {
+  from {
+    transform: translate(-25%, -25%);
+  }
+  to {
+    transform: translate(0%, 0%);
+  }
+}
+
+/* CONTAINER */
+.container {
+  z-index: 2;
+  padding: 20px;
+}
+
+.container h1 {
+  font-size: 70px;
+  margin-bottom: 15px;
+}
+
+.container h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+/* BOTÃO */
+button {
+  background: linear-gradient(45deg, #ff758c, #ff7eb3);
+  border: none;
+  padding: 15px 25px;
+  font-size: 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  color: white;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 120, 150, 0.6);
+}
+
+/* FLOR */
+.flor-container {
+  display: none;
+  position: absolute;
+  z-index: 2;
+}
+
+.rosa {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.petala {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: #ff4d6d;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0);
+}
+
+.p1 { top: 0; left: 25px; }
+.p2 { left: 0; top: 25px; }
+.p3 { right: 0; top: 25px; }
+.p4 { bottom: 0; left: 25px; }
+
+.centro {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background: #c9184a;
+  border-radius: 50%;
+  top: 32px;
+  left: 32px;
+  opacity: 0;
+}
+
+/* ANIMAÇÃO */
+.abrir .petala {
+  animation: abrirPetala 1s forwards;
+}
+
+.abrir .centro {
+  animation: aparecerCentro 1s forwards 0.5s;
+}
+
+@keyframes abrirPetala {
+  to {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes aparecerCentro {
+  to {
+    opacity: 1;
+  }
+}
+
+/* MENSAGEM */
+.mensagem {
+  display: none;
+  max-width: 90%;
+  font-size: 18px;
+  line-height: 1.6;
+  padding: 20px;
+  z-index: 2;
+  animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 RESPONSIVO */
+@media (max-width: 600px) {
+
+  .container h1 {
+    font-size: 48px;
+  }
+
+  .container h2 {
+    font-size: 26px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+
+  .mensagem {
+    font-size: 16px;
+  }
+
+  .rosa {
+    width: 80px;
+    height: 80px;
+  }
+
+  .petala {
+    width: 40px;
+    height: 40px;
+  }
+
+  .centro {
+    width: 25px;
+    height: 25px;
+    top: 27px;
+    left: 27px;
+  }
+}
