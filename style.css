@@ -112,20 +112,24 @@ button:hover {
   }
 }
 
-/* MENSAGEM (CARD BONITO) */
+/* MENSAGEM (AGORA GRANDE E BONITA) */
 .mensagem {
   display: none;
-  max-width: 500px;
+  max-width: 90%;
   width: 100%;
-  font-size: 17px;
-  line-height: 1.7;
-  padding: 25px;
+  font-size: 22px;
+  line-height: 1.9;
+  padding: 30px 25px;
   border-radius: 20px;
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 30px rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 40px rgba(0,0,0,0.25);
   animation: fadeIn 2s ease;
   z-index: 2;
+}
+
+.mensagem p {
+  text-align: center;
 }
 
 /* ANIMAÇÃO TEXTO */
@@ -157,9 +161,9 @@ button:hover {
   }
 
   .mensagem {
-    font-size: 18px; 
-    line-height: 1.8;
-    padding: 20px;
+    font-size: 20px;
+    line-height: 1.9;
+    padding: 25px 20px;
   }
 
   .rosa {
@@ -170,7 +174,6 @@ button:hover {
   .petala {
     width: 40px;
     height: 40px;
-    left: auto;
   }
 
   .centro {
