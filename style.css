@@ -7,38 +7,21 @@
 
 body {
   min-height: 100vh;
-  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+  background: linear-gradient(135deg, #ff4d6d, #c9184a);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: black;
-  overflow: hidden;
+  color: #fff;
+  padding: 20px;
+  overflow-x: hidden;
 }
 
-/* brilho fofo */
-body::before {
-  content: "";
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.2) 10%, transparent 60%);
-  animation: brilho 8s infinite linear;
-}
-
-@keyframes brilho {
-  from {
-    transform: translate(-25%, -25%);
-  }
-  to {
-    transform: translate(0%, 0%);
-  }
-}
-
-/* CONTAINER */
+/* CONTAINER INICIAL */
 .container {
   z-index: 2;
-  padding: 20px;
+  max-width: 600px;
+  width: 100%;
 }
 
 .container h1 {
@@ -100,14 +83,14 @@ button:hover {
   position: absolute;
   width: 35px;
   height: 35px;
-  background: #c9184a;
+  background: #8b0a2a;
   border-radius: 50%;
   top: 32px;
   left: 32px;
   opacity: 0;
 }
 
-/* ANIMAÇÃO */
+/* ANIMAÇÃO DA FLOR */
 .abrir .petala {
   animation: abrirPetala 1s forwards;
 }
@@ -129,17 +112,23 @@ button:hover {
   }
 }
 
-/* MENSAGEM */
+/* MENSAGEM (CARD BONITO) */
 .mensagem {
   display: none;
-  max-width: 90%;
-  font-size: 18px;
-  line-height: 1.6;
-  padding: 20px;
-  z-index: 2;
+  max-width: 500px;
+  width: 100%;
+  font-size: 17px;
+  line-height: 1.7;
+  padding: 25px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(0,0,0,0.2);
   animation: fadeIn 2s ease;
+  z-index: 2;
 }
 
+/* ANIMAÇÃO TEXTO */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -151,3 +140,42 @@ button:hover {
   }
 }
 
+/* RESPONSIVO */
+@media (max-width: 600px) {
+
+  .container h1 {
+    font-size: 45px;
+  }
+
+  .container h2 {
+    font-size: 24px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+
+  .mensagem {
+    font-size: 16px;
+    padding: 20px;
+  }
+
+  .rosa {
+    width: 80px;
+    height: 80px;
+  }
+
+  .petala {
+    width: 40px;
+    height: 40px;
+    left: auto;
+  }
+
+  .centro {
+    width: 25px;
+    height: 25px;
+    top: 27px;
+    left: 27px;
+  }
+}
